@@ -1,0 +1,9 @@
+﻿<div class="list-group">
+  @foreach(var item in Model)
+  {
+  <a id="user_selection" data-id = "@item.Email" class="list-group-item" onclick="active_class(event)">@item.Name - @item.Country</a>
+  }
+</div>
+<div>
+    <button type="button" onclick="add_user(this)">Add User</button>
+</div>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Search"; 
+    ViewData["Path"] = "search.css";
+    ViewBag.Title = "Search ";
+}
+<div class="wrapper">
+        <h2 class="heading">@ViewBag.Title</h2>
+         <div class="search_container">
+                   <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="genre">
+                        <option selected>Action</option>
+                        <option>Thriller</option>
+                        <option>Romance</option>
+                        <option>Mystery</option>
+                        <option>Comedy</option>
+                        <option>Drama</option>
+                        <option>Sci-Fi</option>
+                </select>
+
+                    <select  id="ddlYears" class="box_search"></select>
+                    <button type="button" class="btn btn-outline-primary box_search" id="searchbtn">Search</button>        
+            </div>
+        <div class="container">    
+            <div id="movie_data">
+                <h3 id="h3_head">No Data Found!</h3>
+            </div>
+        </div>
+         
+     </div>
+     @section Scripts{
+   <script src="~/js/search.js"></script>
+}

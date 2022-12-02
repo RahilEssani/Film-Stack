@@ -1,0 +1,256 @@
+﻿* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.header .new_menu {
+    color: red !important;
+}
+
+body {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    font-family: "Agency FB";
+}
+
+.header {
+    background-color: black;
+    border-bottom: 1px solid gray;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logo-class {
+    opacity: 1;
+}
+.new_menu {
+    margin-left: 275px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: red !important;
+}
+
+
+.menu {
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: 20px;
+    opacity: 0.7;
+}
+a:link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
+    text-decoration: underline;
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    padding: 10px;
+}
+
+
+/* <------------- Card Container ---------> */
+.wrapper {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-left: 34px;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.card {
+    border-radius: 12px;
+    border: 0.5px solid black;
+    margin: 10px;
+    position: relative;
+    width: 180px;
+    height: 310px;
+}
+    .card .content {
+        visibility: hidden
+    }
+    .card:hover .content {
+        visibility:visible;
+    }
+
+    .card:hover {
+        border: 2px solid chocolate;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+
+    .card .content {
+        position: absolute;
+        width: 100%;
+        height: 25%;
+        bottom: 0;
+        border-radius: 0px 0px 8px 8px;
+        background: rgba(185,185,185,.3);
+    }
+
+.content h3 {
+    color: white;
+    padding: 5px 0px 0px 10px;
+    font-size: 15px;
+}
+
+.content p {
+    color: white;
+    padding: 0px 0px 5px 10px;
+    font-size: 11px;
+}
+
+.content h6 {
+    color: white;
+    padding: 0px 0px 5px 10px;
+    font-size: 11px;
+}
+
+    .content h6 span {
+        color: black;
+        background: yellow;
+        padding: 2px 4px;
+        margin-right: 7px;
+        border-radius: 5px;
+    }
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding-left: 45px;
+    padding-bottom: 30px;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+
+/*<--------------------- Footer CSS--------------> */
+
+.footer {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-section {
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    border-top: 1px solid gray;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-section2 {
+    width: 20%;
+    border-top: 1px solid gray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+i {
+    margin-right: 15px;
+}
+
+    i:hover {
+        border: 0.5px solid chocolate;
+    }
+
+.foot-text {
+    font-size: 10px;
+}
+
+
+/* <------------slide show------------> */
+
+
+.mySlider3 {
+    justify-content: center;
+    display: flex;
+}
+
+.mySlider2 {
+    justify-content: center;
+    display: flex;
+}
+
+.mySlider1 {
+    justify-content: center;
+    display: flex;
+}
+
+.slide-outter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}

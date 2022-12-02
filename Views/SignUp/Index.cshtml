@@ -1,0 +1,39 @@
+﻿@{
+	Layout = null;
+}	
+    <link rel="stylesheet" href="~/css/signUp.css">
+	<section style="background-image:url(../images/@ViewBag.imagePath)"> 
+		<div class="form-class">
+			<h2>Registration Form</h2>
+			<form method="post" action="@Url.Action("Authenticating", "SignUp")">
+				<div class="form-input  input-container">
+					<label>Name</label>
+					<input class="sample" type="text" name = "name"/>
+				</div>
+				<div class="form-input  input-container">
+					<label>Email</label>
+					<input class="sample" type="email" name = "email"/>
+				</div>
+				<div class="form-input  input-container">
+					<label>Country</label>
+					<input class="sample" type="text" name = "country" />
+				</div>
+				<div class="form-input  input-container">
+					<label>Password</label>
+					<input class="sample" type="password" name = "password" />
+				</div>
+				<div class="form-input">
+					<input type="submit" value="Sign Up" />
+				</div>
+			</form>
+			<div class="login">
+				<a href="/Login">Already have an account?</a>
+			</div>
+			@if(@Model != null)
+			{
+			<div class="login">
+				<h6>@Model</h6>
+			</div>
+			}
+		</div>
+	</section>

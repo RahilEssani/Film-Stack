@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FilmStack</title>
+	<link href="http://fonts.cdnfonts.com/css/agency-fb" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="/css/@ViewData["Path"]" rel="stylesheet">
+</head>
+<partial name="~/Views/Shared/_Header.cshtml" />   
+<body>
+    @RenderBody()  
+</body>
+    <partial name="~/Views/Shared/_Footer.cshtml" />  
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/form.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</html>

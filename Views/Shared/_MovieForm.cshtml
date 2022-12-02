@@ -1,0 +1,44 @@
+﻿<form class="row g-3" id="movie_form">
+    <div class="col-md-5">
+      <label for="MovieID" class="form-label">Movie ID</label>
+      <input type="text" class="form-control" id="MovieID">
+    </div>
+    <div class="col-md-5">
+      <label for="Title" class="form-label">Title </label>
+      <input type="text" class="form-control" id="Title">
+    </div>
+    <div class="col-md-5">
+      <label for="Year" class="form-label">Year</label>
+      <input type="text" class="form-control" id="Year">
+    </div>
+    <div class="col-md-5">
+      <label for="Image" class="form-label">Image</label>
+      <input type="file" class="form-control" id="fileInput" name="file">
+    </div>
+    <div class="col-md-5">
+      <label for="Crew" class="form-label">Crew</label>
+      <input type="text" class="form-control" id="Crew">
+    </div>
+    <div class="col-md-5">
+      <label for="Rating" class="form-label">Rating</label>
+      <input type="text" class="form-control" id="Rating">
+    </div>
+   
+    <div class="col-md-5">
+      <label for="Genre" class="form-label">Genre</label>
+      <select id="Genre" class="form-select">
+        <option selected>Choose...</option>
+        <option>Action</option>
+        <option>Thriller</option>
+        <option>Romance</option>
+        <option>Mystery</option>
+        <option>Comedy</option>
+        <option>Drama</option>
+        <option>Sci-Fi</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <button type="button" onclick="form_submit(this)" class="btn btn-primary">Add Movie</button>
+    </div>
+  </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

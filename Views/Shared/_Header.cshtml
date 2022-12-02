@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+ <div class="header" id="#myHeader">
+        <div class="logo-class">
+             <a asp-controller="Home" asp-action="Index"><img class="logo" src="~/images/logo.png" alt="logo" asp-append-version="true"></a>
+        </div>
+            <div class="menu">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+            </div>
+            <div class="menu">
+                <a asp-controller="Trending" asp-action="Index">Trending</a>
+            </div>
+            <div class="menu">
+                 <a asp-controller="TopRated" asp-action="Index">Top Rated</a>
+            </div>
+            <div class="menu">
+                 <a asp-controller="Upcoming" asp-action="Index">Upcoming</a>
+            </div>
+            <div class="menu new_menu">
+        @if (@HttpContextAccessor.HttpContext.Session.Keys.Contains("userID"))
+        {
+            <div class="" >
+                <a asp-controller="Home" asp-action="Search"><span class="fa fa-search"></span></a>
+            </div>
+            <div class="">
+            <a asp-controller="Account" asp-action="Index">Dashboard</a>
+            </div>
+        }
+        else
+        {
+            <div class="" >
+                <a asp-controller="Home" asp-action="Search"><span class="fa fa-search"></span></a>
+            </div>
+            <div class="">
+            <a asp-controller="Login" asp-action="Index">Login</a>
+            </div>
+            <div class="">
+            <a asp-controller="Signup" asp-action="Index">Signup</a>
+            </div>
+        }
+        </div>
+    </div>

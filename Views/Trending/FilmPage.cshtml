@@ -1,0 +1,11 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "Film Page";
+    ViewData["Path"] = "film.css";
+    ViewBag.Title = "Trending";
+}
+    <partial name="~/Views/Shared/_FilmComponent.cshtml" model=@Model />
+
+    @section Scripts{
+   <script src="~/js/site.js"></script>
+}

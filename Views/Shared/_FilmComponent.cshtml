@@ -1,0 +1,102 @@
+﻿@{
+	ViewBag.DATE = DateTime.Now;
+}
+
+<style>
+	.outter-container {
+    display: flex;
+    flex-direction: column;
+	background: linear-gradient(rgb(0, 0, 0,0.9), rgb(0, 0, 0,0.9)), url("@Model.Image");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.outter-container::before {
+    content: "";
+    background-size: cover;
+	background-image: url("@Model.Image");
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+</style>
+<div class="outter-container">
+		<div class="movie">
+			<div class="title">
+				<h1 id="title-data">@Model.Title <span> @Model.Year</span></h1>
+			</div>
+
+			<div class="details">
+				<div class="cardPost">
+					<img src="@Model.Image" alt="">
+				</div>
+   
+				<div class="info">
+
+					<div class="movieinfo">
+					<div class="line"><span class="titleheading">Director:	</span>
+					<a href="#">@Model.Directors</a>
+					</div>
+
+					<div class="line"><span class="titleheading">Genres:	</span>
+					<a href="#">@Model.Genres</a>				
+					</div>
+
+					<div class="line"><span class="titleheading">Writer: </span> @Model.Writers</div>
+					<div class="line"><span class="titleheading">Runtime: </span> @Model.RuntimeMins Minutes</div>
+					<div class="line"><span class="titleheading">Release: </span> @Model.ReleaseDate</div>
+					
+					</div>
+
+					<div class="play">
+					<div class="line"><a href="@Model.Trailer.LinkEmbed" class="fancybox" data-fancybox-type="iframe" title="@Model.Title">► Play Trailer</a> - 
+					<a href="@Model.Image" class="fancybox" data-fancybox-type="image" title="@Model.Title">Poster</a></div>
+				    </div>
+
+
+					<div class="fullinfo"> 
+						<div class="line"><span class="h6">IMDB</span> @Model.IMDbRating</div>
+					<div class="line"><span class="titleheading">MetaCritic Rating: </span> @Model.MetacriticRating</div>
+					<div class="line"><span class="titleheading">Box Office: </span> @Model.BoxOffice.OpeningWeekendUSA</div>
+
+							<div class="cast">
+					            <div class="infotitle titleheading">Cast</div>
+								<a href="#">@Model.Stars</a>					
+							</div>
+																				
+							<div class="synopsis">
+								<div class="infotitle titleheading"><b>Synopsis</b> </div>
+								<p>@Model.Plot</p>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="reviews">
+			<div class="reviewtitle titleheading">Movie Reviews: @Model.Title</div>
+			<div>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tbody id="user-comment">
+						@if(ViewBag.Comments != null)
+						{
+							@foreach(var item in ViewBag.Comments)
+							{
+							 <partial name="~/Views/Shared/_Review.cshtml" model=item/>
+							}
+						}
+					</tbody>
+					<partial name="~/Views/Shared/_ReviewForm.cshtml" />
+				</table>
+			</div>
+		</div>
+
+		<h1 class="subtitle">Similar Movies to @Model.Title</h1>
+		<div class="container">
+            @for(int i=0; i<10; i++)
+            {
+			<a asp-controller="@ViewBag.Title" asp-action="FilmPage" asp-route-id="@Model.Similars[i].Id"><partial id="@i" name="~/Views/Shared/_Card.cshtml" model=@Model.Similars[i] /></a>
+            }
+        </div>
+	</div>
+	<span id="movieID">@Model.Id</span>

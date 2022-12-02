@@ -1,0 +1,5 @@
+﻿
+    @foreach(var item in Model)
+    {
+    <a asp-controller="Trending" asp-action="FilmPage" asp-route-id="@item.Id"><partial name="~/Views/Shared/_Card.cshtml" model=@item /></a>
+    }

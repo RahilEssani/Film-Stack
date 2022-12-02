@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "";
+    ViewData["Path"] = "landing.css";
+    ViewData["JsPath"] = "landing.js";
+    bool landing = false;
+}
+      <div class="outter-div">
+      <div class="slide-outter">
+         <h1 style="color: white;">Trending</h1>
+            <div class="mySlides1 fade" id='1'>
+                @await Component.InvokeAsync("Trending_Movies",new { items =  @Model.Trending , flag = @landing})
+            </div>
+            <div class="mySlides1 fade" id='2'>
+                @await Component.InvokeAsync("Trending_Movies",new { items =  @Model.Trending , flag = @landing})
+            </div>
+            <div class="mySlides1 fade" id='3'>
+                @await Component.InvokeAsync("Trending_Movies",new { items =  @Model.Trending , flag = @landing})
+            </div>
+      </div>
+
+      <div class="slide-outter">
+         <h1 style="color: white;">TopRated</h1>
+            <div class="mySlides2 fade" id='1'>
+                  @await Component.InvokeAsync("TopRated_Movies",new { items =  @Model.TopRated , flag = @landing})
+
+            </div>
+            <div class="mySlides2 fade" id='2'>
+                 @await Component.InvokeAsync("TopRated_Movies",new { items =  @Model.TopRated , flag = @landing})
+
+            </div>
+            <div class="mySlides2 fade" id='3'>
+                 @await Component.InvokeAsync("TopRated_Movies",new { items =  @Model.TopRated , flag = @landing})
+            </div>
+      </div>
+
+      <div class="slide-outter">
+         <h1 style="color: white;">Upcoming</h1>
+            <div class="mySlides3 fade" id='1'>
+               @await Component.InvokeAsync("Upcoming_Movies",new { items =  @Model.Upcoming , flag = @landing})
+            </div>
+            <div class="mySlides3 fade" id='2'>
+                 @await Component.InvokeAsync("Upcoming_Movies",new { items =  @Model.Upcoming , flag = @landing})
+            </div>
+            <div class="mySlides3 fade" id='3'>
+                 @await Component.InvokeAsync("Upcoming_Movies",new { items =  @Model.Upcoming , flag = @landing})
+            </div>
+      </div>
+      
+      </div>
+@section Scripts{
+   <script src="~/js/landing.js"></script>
+}

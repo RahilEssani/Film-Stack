@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Upcoming"; 
+    ViewData["Path"] = "trend.css";
+    ViewBag.Title = "Upcoming";
+    bool landing = true;
+}
+<div class="wrapper">
+        <h2 class="heading">@ViewBag.Title</h2>
+        <div class="container">
+         @await Component.InvokeAsync("Upcoming_Movies",new { items =  @Model})
+        </div>
+     </div>

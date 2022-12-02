@@ -1,0 +1,25 @@
+﻿@{
+	Layout = null;
+}
+    <link rel="stylesheet" href="~/css/login.css">
+<section style="background-image:url(../images/@ViewBag.imagePath)"> 
+	<div class="form-class">
+		<h2><b>Login Form</b></h2>
+		<form method="post" action="@Url.Action("LoginAuthenticate", "Login")">
+			<div class="form-input  input-container">
+				<label class="form__label"><b>Email</b></label>
+				<input type="email" name = "email"/>
+			</div>
+			<div class="form-input input-container">
+				<label><b>Password</b></label>
+				<input type="password" name = "password"/>
+			</div>
+			<div class="form-input">
+				<input type="submit" value="Login" />
+			</div>
+		</form>
+		<div class="sign-up">
+				<a href="/SignUp">Wanna Sign Up?</a>
+			</div>
+	</div>
+</section>
